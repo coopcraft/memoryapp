@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from corememapp.models import Memory, Author
-# from audios.models import Audio, Author
 
 def index(request):
     num_memories = Memory.objects.all().count()

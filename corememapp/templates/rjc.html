@@ -1,7 +1,20 @@
 <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <Title>Yette the Coop</Title>
 </head>
 
 <body>
     <h1>This is the story of a young yette, who likes Fig.</h1>
+
+    <div>
+        <button id="buttonRjc" type="button" class="button"
+          onclick='jsFunction()'>Click Me!</button>
+    </div>
+
+    <script>
+        function jsFunction() {
+            alert("This is a Javascript function executing in rjc.html");
+        }
+    </script>
 </body>

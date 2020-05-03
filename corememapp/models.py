@@ -1,9 +1,12 @@
 from django.db import models
 
 class Memory(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, null=True)
+    category = models.CharField(max_length=200, null=True)
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
-    bodytext = models.TextField('Memory Content', blank=True, null=True)
+    where = models.CharField(max_length=200, null=True)
+    when = models.CharField(max_length=200, null=True)
+    story = models.TextField('Memory Content', blank=True, null=True)
 
     def publish(self):
         self.save()
