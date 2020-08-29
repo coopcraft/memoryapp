@@ -1,0 +1,33 @@
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <Title>Llama the Mama</Title>
+</head>
+
+<body>
+    <h1>This is the story of a young llama, who likes Coop Sr.</h1>
+
+    {% for memory in memories %}
+        <div>
+            <h2>{{ memory.title }}</h2>
+            <h3>{{ memory.category }}</h3>
+            <a href="{{ memory.get_absolute_url }}">{{ memory.title }}</a>
+        </div>
+    {% endfor %}
+
+    <img src="{% static 'images/durden02TN.jpg' %}" width="340" height="420">
+
+    <div>
+        <button id="buttonLac" type="button" class="button"
+          onclick='jsFunction()'>Click Me!</button>
+    </div>
+
+    <script>
+        function jsFunction() {
+            alert("This is a Javascript function executing in lac.html");
+        }
+    </script>
+
+</body>
