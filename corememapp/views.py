@@ -12,7 +12,8 @@ def memory_list(request):
         'memories': memories,
     }
 
-    return render(request, 'index.html', context=context)
+    # return render(request, 'index.html', context=context)
+    return render(request, 'index.html', {'context': context})
 
 def memory_detail(request, pk):
     memory = get_object_or_404(Memory, pk=pk)
