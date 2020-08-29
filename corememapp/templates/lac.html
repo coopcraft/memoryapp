@@ -9,7 +9,7 @@
 <body>
     <h1>This is the story of a young llama, who likes Coop Sr.</h1>
 
-    {% for memory in memories %}
+    {% for memory in context.memories %}
         <div>
             <h2>{{ memory.title }}</h2>
             <h3>{{ memory.category }}</h3>
