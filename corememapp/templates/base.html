@@ -21,12 +21,16 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-2 sidebar">
-      {% block sidebar %}
-        <ul class="sidebar-nav">
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="">All memories</a></li>
-        </ul>
-      {% endblock %}
+        {% block sidebar %}
+        <h2>Memories</h2>
+        {% for memory in context.memories %}
+        <div id="sidebar">
+          <!-- This is the trick to create list links that are bound to individual objects by pk -->
+          <!-- When link is clicked, details for pk will be loaded into detail html -->
+          <p><a href="{% url 'memory_detail' pk=memory.pk %}">{{ memory.title }}</a></p>
+        </div>
+        {% endfor %}
+        {% endblock %}
       </div>
       <div class="col-sm-10 ">{% block content %}{% endblock %}</div>
     </div>

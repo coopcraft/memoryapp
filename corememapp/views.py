@@ -12,12 +12,20 @@ def memory_list(request):
         'memories': memories,
     }
 
-    # return render(request, 'index.html', context=context)
     return render(request, 'index.html', {'context': context})
 
 def memory_detail(request, pk):
+    # Sending all memories for nav list. Need to improve this.
+    memories = Memory.objects.all()
+    # This is the selected memory
     memory = get_object_or_404(Memory, pk=pk)
-    return render(request, 'memory_detail.html', {'memory': memory})
+
+    context = {
+        'memories': memories,
+        'memory': memory,
+    }
+
+    return render(request, 'memory_detail.html', {'context': context})
 
 def rjc(request):
     return render(request, 'rjc.html')

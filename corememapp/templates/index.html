@@ -1,16 +1,5 @@
 {% extends "base.html" %}
 
-{% block sidebar %}
-<h2>Memories</h2>
-{% for memory in context.memories %}
-<div id="sidebar">
-  <!-- This is the trick to create list links that are bound to individual objects by pk -->
-  <!-- When link is clicked, details for pk will be loaded into detail html -->
-  <p><a href="{% url 'memory_detail' pk=memory.pk %}">{{ memory.title }}</a></p>
-</div>
-{% endfor %}
-{% endblock %}
-
 {% block content %}
   <h1>Memory App Home</h1>
   <h2>Welcome to the Coops Memory App, a website developed by <em>CoopCraft</em>!</h2>
